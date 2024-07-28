@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <h1>This is my portfolio</h1>
+      <Navbar />
     </div>
   );
 }
