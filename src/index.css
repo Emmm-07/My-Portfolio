@@ -21,28 +21,61 @@ code {
 }
 
 .App{
-  max-width: 1300px;
+  max-width: 81.25rem;
   /* border: red 2px solid; */
   margin:auto;
 }
-
 .navbar{
   display: flex;
-  
+  top: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #333;
+  width: 81.25rem;
+  height: 5rem;
+  opacity: 0.9;
 }
-
+.navbar h1{
+  align-content: center;
+  margin-left: 1rem;
+}
 .navbar .links{
+
   display: flex;
   flex-direction: row;
   margin-left: auto;
+  margin-right: 1rem;
 }
 .navbar .links li{
   padding:20px ;
   list-style: none;
   font-weight: 1000;
-
 }
 
+.homepage{
+  margin-top: 5rem;
+  display:grid;
+  grid-template-columns: 50% 50%;
+}
+
+
+.intro-text{
+  border:red 2px solid;
+  justify-self: start;
+  margin: auto;
+}
+.intro-text h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.intro-text h4{
+  font-size: 1.2rem;
+  border: 2px white solid;
+  width: 20rem;
+}
+.intro-text p{
+
+}
 @media screen and (max-width: 1040px) {
   .navbar{
     display: flex;

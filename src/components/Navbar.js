@@ -1,11 +1,14 @@
 import { FaFacebookF } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+
+
 const Navbar = () => {
     const socialsStyle = {border: '1px white solid', padding:'8px',height:'30px',width:'30px',marginRight:'10px',borderRadius:'15px'};
     return (  
         <div className="navbar">
-            <h1>My portfolio</h1>
+            
+            <h1>Jm Balatico</h1>
 
             <ul className="links">  
                  <li>Home</li>
@@ -20,6 +23,7 @@ const Navbar = () => {
                     Let's Connect
                 </li>
             </ul>
+            
         </div>
     );
 }
