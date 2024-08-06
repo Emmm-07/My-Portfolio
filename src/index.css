@@ -148,6 +148,9 @@ code {
   text-align: center;
   font-weight: bold;
 }
+.skills h3{
+  text-shadow: 5px 5px 10px white;
+}
 .carousel-control-prev{
   display: none;
 }
@@ -169,7 +172,11 @@ code {
   }
 }
 
-
+@media screen and (min-width: 1050px) {
+  .navbar .hidden-menu{
+    display: none;
+  }
+}
 /*           Laptop Screen       */
 @media screen and (max-width: 1024px) {
 .homepage,.skills{
