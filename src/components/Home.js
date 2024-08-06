@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import logo from '../images/logo.png';
 const Home = () => {
     return (  
-        <div className="homepage" style={{height:'90vh',}}>
+        <div className="homepage" id='homepage' style={{height:'90vh',}}>
             <div className='intro-text'>
                 <h4>Welcome to my portfolio</h4>
                 <h1>Hi! I'm JM</h1>
