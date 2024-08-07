@@ -1,3 +1,4 @@
+import { IconContext } from "react-icons";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -7,7 +8,7 @@ import { useState,useEffect } from "react";
 
 
 const Navbar = () => {
-    const socialsStyle = {border: '1px white solid', padding:'8px',height:'30px',width:'30px',marginRight:'10px',borderRadius:'15px'};
+    const socialsStyle = {border: '1px white solid', padding:'8px',height:'30px',width:'30px',marginRight:'10px',borderRadius:'15px',color:'blue'};
     const [menuDisplay,setMenuDisplay] = useState('none')
     
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);

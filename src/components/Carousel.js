@@ -1,4 +1,4 @@
-//https://docs.google.com/document/d/1FLzzJ7zpTDWGZg56gu1rWvv7HDXdLZz3F-c07sNwZlE/edit
+//ref:   https://docs.google.com/document/d/1FLzzJ7zpTDWGZg56gu1rWvv7HDXdLZz3F-c07sNwZlE/edit
 
 import React, { useEffect, useState, useRef, useMemo } from "react";
 
@@ -51,19 +51,16 @@ const Carousel = ({items}) => {
 
     return (
         <div className="container drr">
-      
             <hr />
-
-
             <div
                 className={classNames("ItemsContainer dbb", { activeItems: isDown })}
                 ref={itemsContainer}
-                // mouse events
+                // mouse events   (for mouse)
                 onMouseDown={(e) => handleMouseDown(e)}
                 onMouseUp={() => setIsDown(false)}
                 onMouseLeave={() => setIsDown(false)}
                 onMouseMove={(e) => handleMouseMove(e)}
-                // touch events
+                // touch events   (for touchscreens)
                 onTouchStart={(e) => handleMouseDown(e)}
                 onTouchEnd={() => setIsDown(false)}
                 onTouchCancel={() => setIsDown(false)}

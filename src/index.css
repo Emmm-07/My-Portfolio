@@ -4,6 +4,9 @@
   padding: 0;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: white;
+  transition: 
+    width 2s,
+    height 2s;
 }
 body {
   margin: 0;
@@ -102,8 +105,9 @@ html, body {
 }
 .navbar .links svg:hover{
   scale: 1.5;
-  background-color: pink;
+  background-color: #ffff44;
   cursor: pointer;  
+  color: #333;
 
 }
 
@@ -119,6 +123,7 @@ html, body {
   color: #333;
   text-shadow: 1px 1px white;
 }
+
 .navbar .links .connectBtn:hover{
   scale: 1.05;
   cursor: pointer;
@@ -141,6 +146,7 @@ html, body {
 /*      Homepage  */
 .homepage{
   margin-top: 5rem;
+  margin-bottom: 5rem;
   display:grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
@@ -196,6 +202,8 @@ html, body {
 /*    Projects */
 .projects{
   margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* border: 1px solid red; */
 }
 .projects h2{
   text-align: center;
@@ -206,6 +214,8 @@ html, body {
 .projects .container {
   padding: 50px;
   /* border: 1px solid red; */
+  margin-top: 4rem;
+  /* margin-bottom: 2rem; */
 }
 
 .projects .container hr{
@@ -273,14 +283,17 @@ html, body {
 /*   Contact */
 .contact{
   margin-top: 5rem;
+  margin-bottom: 5rem;
   /* border: red 2px solid; */
 }
 .contact h2{
   text-align: right;
   font-weight: bold;
+  margin-bottom: 5rem;
 }
 
 .contact .container{
+/* border: red 2px solid; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* grid-template-rows: repeat(5,1fr); */
@@ -329,6 +342,13 @@ html, body {
    /* border: red 2px solid; */
    height: 3rem;
 }
+
+
+
+
+
+
+
 @media screen and (max-width: 1310px) {
   .homepage,.skills{
     max-width: 100%;
@@ -338,11 +358,7 @@ html, body {
   }
 }
 
-@media screen and (min-width: 1050px) {
-  .navbar .hidden-menu{
-    display: none;
-  }
-}
+
 /*           Laptop Screen       */
 @media screen and (max-width: 1024px) {
 .homepage,.skills{
@@ -369,9 +385,11 @@ html, body {
     right: 4rem;
     top: 4rem;
     background-color: rgba(255, 255, 255, 0.1);
-    width: 20rem;
+    /* width: 20rem; */
+    width: 35%;
     border-radius: 1rem;
     z-index: 1;
+    
   }
   .navbar .hidden-menu li{
     padding:10px ;
