@@ -1,7 +1,7 @@
 //https://docs.google.com/document/d/1FLzzJ7zpTDWGZg56gu1rWvv7HDXdLZz3F-c07sNwZlE/edit
 
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import "../Carousel.css";
+
 import classNames from "classnames";
 
 

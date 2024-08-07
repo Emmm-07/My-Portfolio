@@ -20,6 +20,27 @@ code {
     monospace;
 }
 
+html, body { 
+  scroll-behavior: smooth
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 16px;
+}
+::-webkit-scrollbar-thumb:hover ~ ::-webkit-scrollbar{
+  border: 2px solid yellow;
+  width: 10px;
+}
+
+
 .App{
   max-width: 81.25rem;
   /* border: red 2px solid; */
@@ -46,7 +67,8 @@ code {
   background-color: #333;
   width: 81.25rem;
   height: 5rem;
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  z-index: 1;
 }
 .navbar h1{
   align-content: center;
@@ -65,6 +87,12 @@ code {
   list-style: none;
   font-weight: 1000;
 }
+
+.navbar a{
+  text-decoration: none;
+  color: white;
+}
+
 .navbar .links li:hover{
   scale: 1.2;
   cursor: pointer;
@@ -80,15 +108,16 @@ code {
 }
 
 .navbar .links .connectBtn, .navbar .connectBtn{
-  border:1px white solid;
+  /* border:1px white solid; */
   height:50px;
   width:170px;
   text-align:center;
   margin:auto 0 auto 20px;
   padding:15px;
   border-radius:20px;
-  background-color:white;
-  color:#333;
+  background-color:#ffff44;
+  color: #333;
+  text-shadow: 1px 1px white;
 }
 .navbar .links .connectBtn:hover{
   scale: 1.05;
@@ -114,7 +143,8 @@ code {
   margin-top: 5rem;
   display:grid;
   grid-template-columns: 50% 50%;
-
+  grid-template-rows: 1fr;
+  /* border: 2px red solid; */
 }
 
 .intro-text{
@@ -151,18 +181,154 @@ code {
 .skills h3{
   text-shadow: 5px 5px 10px white;
 }
-.carousel-control-prev{
+/* .carousel-control-prev{
   display: none;
 }
 .carousel-control-next{
   display: none;
-}
+} */
 /* .skills div{
   display:flex;
  flex-direction: column;
 } */
 
 
+/*    Projects */
+.projects{
+  margin-top: 5rem;
+}
+.projects h2{
+  text-align: center;
+  font-weight: bold;
+}
+
+                          /* Projects Carousel  */
+.projects .container {
+  padding: 50px;
+  /* border: 1px solid red; */
+}
+
+.projects .container hr{
+  opacity: 0;
+}
+.projects .ItemsContainer {
+    /* border: 1px solid red; */
+  width: 100%;
+  height: 25rem;
+  padding: 10px;
+  white-space: nowrap;
+  user-select: none;
+  cursor: grab;
+  overflow: hidden;
+  margin: auto;
+
+}
+
+
+.projects .item {
+
+  /* width: 200px;
+  height: 200px; */
+  margin: 0 2rem;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
+  /* background-color: gray; */
+  
+  background-color: white;
+}
+
+.projects .item:hover{
+  scale: 1.1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.projects .activeItems {
+  /* background-color: lightblue; */
+  cursor: grabbing;
+}
+
+
+.projects button{
+  border:1px white solid;
+  height:50px;
+  width:170px;
+  text-align:center;
+  margin:auto 0 auto 20px;
+  padding:15px;
+  border-radius:20px;
+  background-color:white;
+  color:#333;
+  float: right;
+}
+
+
+
+
+/*   Contact */
+.contact{
+  margin-top: 5rem;
+  /* border: red 2px solid; */
+}
+.contact h2{
+  text-align: right;
+  font-weight: bold;
+}
+
+.contact .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: repeat(5,1fr); */
+  /* grid-template-rows: repeat(auto-fit, minmax(1fr,425px)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(425px,1fr)); */
+  gap: 1.5rem;
+
+  width: 80%;
+  margin-top: 3rem;
+
+}
+.contact .container input{
+  border: 2px white solid;
+  border-radius: 1.5rem;
+  background-color: transparent;
+  height: 3rem;
+
+}
+.contact .container textarea{
+  grid-column: 1/3 ;     
+  /* grid-row: 3/6; */
+  border: 2px white solid;
+  border-radius: 1rem;
+  background-color: transparent;
+  height: 15rem; 
+}
+.contact button{
+  border:1px white solid;
+  height:50px;
+  width:170px;
+  text-align:center;
+  padding:15px;
+  border-radius:20px;
+  background-color:white;
+  color:#333;
+}
+
+
+.footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  margin-top: 10rem;
+
+}
+.footer div div{
+   /* border: red 2px solid; */
+   height: 3rem;
+}
 @media screen and (max-width: 1310px) {
   .homepage,.skills{
     max-width: 100%;
@@ -205,6 +371,7 @@ code {
     background-color: rgba(255, 255, 255, 0.1);
     width: 20rem;
     border-radius: 1rem;
+    z-index: 1;
   }
   .navbar .hidden-menu li{
     padding:10px ;
@@ -233,9 +400,7 @@ code {
 
 /*           Tablet Screen       */
 @media screen and (max-width: 768px) {
-  /* .App{
-    max-width: 768px;
-  } */
+  
 .homepage,.skills{
     max-width: 768px;
     /* margin: 0 auto; */
@@ -243,7 +408,14 @@ code {
   .navbar{
     max-width: 100%;
   }
-  
+  .contact .container{
+    grid-template-columns: 1fr ;
+    /* grid-template-rows: repeat(8,1fr);  */
+  }
+  .contact .container textarea {
+    grid-column: 1;
+    /* grid-row: 5/8; */
+  }
 }
 
 

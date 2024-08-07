@@ -2,6 +2,7 @@
 // import Carousel from 'react-bootstrap/Carousel';
 import Carousel from "./Carousel";
 import mitLogo from  "../images/mit_logo.png"
+import "../Carousel.css";
 const Skills = () => {
 //https://www.youtube.com/watch?v=l3aKPVx_EK0  
     

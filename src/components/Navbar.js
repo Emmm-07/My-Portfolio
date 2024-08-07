@@ -27,40 +27,64 @@ const Navbar = () => {
     }, [screenWidth]);
   
 
+    const scrollToSection = (id, event) => {
+        event.preventDefault();
+        const element = document.getElementById(id);
+        const offset = 75;
+        const offsetPosition = element.offsetTop - offset;
+    
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    };
+
     return (  
         <div className="navbar" id='navbar'>
             <h1>Jm Balatico</h1>
            
             <ul className="links">  
-                <li><a href="#homepage">Home</a></li>
-                <li><a href="#skills">Skills</a></li> 
-                <li>Projects</li>
+                <li><a href="#" onClick={(e) => scrollToSection('homepage', e)}>Home</a></li>
+                <li><a href="#" onClick={(e) => scrollToSection('skills', e)}>Skills</a></li> 
+                <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
+                
                 {/* <li style={{ padding:'0',margin:'auto'}}> */}
                     <FaFacebookF style={socialsStyle}/>
                     <FaGithub style={socialsStyle}/>
                     <FaLinkedinIn style={socialsStyle}/>
                 {/* </li> */}
-                <li className="connectBtn" >
+                <li className="connectBtn" onClick={(e) => scrollToSection('contact', e)}>
                     Let's Connect
                 </li>
             </ul>
+
+
+
+
+
+
             <button className="menuBtn"
                     onClick={()=>(setMenuDisplay(menuDisplay==='none'?'block':'none'))}
             ><img src={menuDisplay==='none'?menubar:closemenu} alt="" width={30}/></button>
 
   
             <div className="hidden-menu" style={{ display: menuDisplay}}>  
-                <li><a href="#navbar">Home</a></li>
-                <li><a href="#skills">Skills</a></li> 
-                <li>Projects</li>
+                <li><a href="#" onClick={(e) => scrollToSection('homepage', e)}>Home</a></li>
+                <li><a href="#" onClick={(e) => scrollToSection('skills', e)}>Skills</a></li> 
+                <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
+            
+
                 {/* <li style={{ padding:'0',margin:'auto'}}> */}
                     <FaFacebookF style={socialsStyle}/>
                     <FaGithub style={socialsStyle}/>
                     <FaLinkedinIn style={socialsStyle}/>
+                  
                 {/* </li> */}
-                <li className="connectBtn" >
+                
+                <li className="connectBtn" onClick={(e) => scrollToSection('contact', e)}>
                     Let's Connect
                 </li>
+                
             </div>
             
             
