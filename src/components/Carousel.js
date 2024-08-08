@@ -14,6 +14,10 @@ const Carousel = ({items}) => {
 
     const itemsContainer = useRef();
 
+    const preventDragHandler = (e) => {
+        console.log("Hello")
+        e.preventDefault();
+    }
 
     // functions
     function handleMouseDown(e) {
@@ -40,9 +44,10 @@ const Carousel = ({items}) => {
                 : e.pageX - itemsContainer.current.offsetLeft;
 
 
-        setMouseMoved((currentMousePositionInsideContainer - startX));
+        setMouseMoved((currentMousePositionInsideContainer - startX)*2);     //To adjust  drag speed, replace the 2
     }
 
+    
 
     useEffect(() => {
         itemsContainer.current.scrollLeft = scrollLeftState - mouseMoved;
@@ -68,7 +73,9 @@ const Carousel = ({items}) => {
             >
 
                 {items.map(item => 
-                <div className="item"><a href={item.link} target="_blank" rel="noreferrer" title={item.alt}> <img src={item.img} alt={item.alt} width="80" height="80"/> </a></div>
+                <div className="item"
+                     onDragStart={preventDragHandler}
+                ><a href={item.link} target="_blank" rel="noreferrer" title={item.alt}> <img src={item.img} alt={item.alt} width="70" height="70"/> </a></div>
                 )}
                 {/* <div className="item">02</div>
                 <div className="item">03</div>
