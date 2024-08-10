@@ -1,8 +1,8 @@
 
 // import Carousel from 'react-bootstrap/Carousel';
-import Carousel from "./Carousel";
+import Carousel from "./SkillsCarousel";
 import mitLogo from  "../images/mit_logo.png"
-import "../Carousel.css";
+import "../SkillsCarousel.css";
 const Skills = () => {
 //https://www.youtube.com/watch?v=l3aKPVx_EK0  
     
@@ -22,7 +22,7 @@ const Skills = () => {
     const  frameworkList = [
             {alt:"Django", link: "https://www.djangoproject.com/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"},
             {alt:"Reactjs", link: "https://reactjs.org/", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"},
-            {alt:"Tendorflow", link: "https://www.tensorflow.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"},
+            {alt:"Tensorflow", link: "https://www.tensorflow.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"},
 
             {alt:"Scikit-Learn", link: "https://scikit-learn.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"},
             {alt:"OpenCV", link:"https://opencv.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"},

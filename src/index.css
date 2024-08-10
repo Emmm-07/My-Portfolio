@@ -215,9 +215,9 @@ html, body {
 
                           /* Projects Carousel  */
 .projects .container {
-  padding: 50px;
+  padding: 0;
   /* border: 1px solid red; */
-  margin-top: 4rem;
+  margin-top: 1rem;
   /* margin-bottom: 2rem; */
 }
 
@@ -227,40 +227,78 @@ html, body {
 .projects .ItemsContainer {
     /* border: 1px solid red; */
   width: 100%;
-  height: 25rem;
+  height: 33rem;
   padding: 10px;
   white-space: nowrap;
   user-select: none;
   cursor: grab;
   overflow: hidden;
   margin: auto;
+  /* border: blue 2px solid; */
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
 }
 
 
 .projects .item {
-
-  /* width: 200px;
-  height: 200px; */
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* border: 2px solid #ffff44; */
   margin: 0 2rem;
   width: 30rem;
-  height: 20rem;
   border-radius: 1rem;
-  display: inline-flex;
-  /* justify-content: center; */
   justify-content: center;
   align-items: center;
-  /* background-color: gray; */
-  
-  background-color: white;
+  height: 30rem;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .projects .item:hover{
-  scale: 1.1;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* scale: 1.1; */
+  /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
 
+.projects .item a{
+  border:#ffff44 2px solid;
+  height: 18rem;
+  width: 100%;
+  align-self: flex-start;
+  width: 100%;
+  border-radius: 1rem ;
+  margin: 1rem 0 1rem 0;
+}
+
+.projects .item a img{
+  /* border: blue 2px solid; */
+  width: 100%;
+  height: 100%;
+}
+.projects  .item p{
+  border: white 2px solid;
+  border-top: none;
+  border-radius: 1rem;
+  /* width: 10rem; */
+  word-wrap:break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  /* margin-top: 10rem; */
+  height: 10rem;
+  transition: grid-row 5s;
+}
+
+.projects .item label{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  /* border: red 2px solid; */
+
+}
 .projects .activeItems {
   /* background-color: lightblue; */
   cursor: grabbing;
@@ -279,6 +317,44 @@ html, body {
   color:#333;
   float: right;
 }
+            /* Projects Modal */
+.modal-backdrop{
+  border: 50px solid green;
+  padding: 10rem;
+}
+.modal-dialog{
+  border: 2px solid blue;
+  /* position:fixed; */
+  margin:auto;
+  /* height: 100%; */
+  /* position: absolute; */
+}
+.modal-content {
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 10px;
+  border: 2px solid red;
+  /* height: 100%;   */
+}
+
+.modal-header {
+  background-color: #007bff; /* Blue header */
+  color: white;
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-footer .btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-footer .btn:hover {
+  background-color: #0056b3;
+}
+
 
 
 

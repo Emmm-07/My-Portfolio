@@ -1,0 +1,95 @@
+.skills .container {
+    padding: 10px;
+  }
+  
+
+  .skills .ItemsContainer {
+    width: 100%;
+    /* width: 60%; */
+    height: 150px;
+    padding: 10px;
+    white-space: nowrap;
+    user-select: none;
+    cursor: grab;
+    overflow: hidden;
+    /* border: red 2px solid; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+  
+  .skills hr{
+    /* border: red 2px solid; */
+    margin-top:0 ;
+    margin-bottom: 0.5rem;
+  }
+
+  .skills .item {
+
+    /* width: 200px;
+    height: 200px; */
+    margin: 0 1rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: gray; */
+    
+   
+    transition: transform 3s;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffff44;
+/* 
+    display: grid;
+    grid-template-columns: 100px; */
+   display: flex;
+   flex-direction: column;
+   
+  }
+  
+  .skills .item:hover{
+    /* scale: 0.8; */
+    /* background-color: white; */
+    /* transform: rotate(360deg); */
+  }
+
+  .skills .item label{
+    /* position: absolute; */
+    /* margin-top: 8rem; */
+    font-size: small;
+    /* border: red 2px solid; */
+    /* margin-left: 2.5rem; */
+    display: none;
+    align-items: center;
+    align-content: center;
+
+  }
+
+  .skills .item a{
+     /* border: red 2px solid; */
+     display: flex;
+     flex-direction: column;
+     text-decoration: none;
+  }
+  .skills .item a img{
+      /* border: blue 2px solid; */
+      margin: 0 auto;
+  }
+  .skills .item:hover label{
+    display: block;
+    /* color: #333; */
+    text-align: center;
+  }
+
+  .skills .activeItems {
+    /* background-color: lightblue; */
+    cursor: grabbing;
+  }
+  
+  
+  

@@ -47,13 +47,19 @@ const Carousel = ({items}) => {
         setMouseMoved((currentMousePositionInsideContainer - startX)*2);     //To adjust  drag speed, replace the 2
     }
 
-    
 
     useEffect(() => {
         itemsContainer.current.scrollLeft = scrollLeftState - mouseMoved;
     }, [isDown, startX, scrollLeftState, mouseMoved]);
 
 
+    const [clickedIndex,setClickedIndex] = useState(null);
+
+    const handleClickedIndex = (index) =>{
+        setClickedIndex(index === clickedIndex? null: index);
+        console.log(clickedIndex);
+    };
+    
     return (
         <div className="container drr">
             <hr />
@@ -72,11 +78,21 @@ const Carousel = ({items}) => {
                 onTouchMove={(e) => handleMouseMove(e)}
             >
 
-                {items.map(item => 
-                <div className="item"
+                {items.map((item,index) => 
+             
+                <div className="item" key={index}
                      onDragStart={preventDragHandler}
-                ><a href={item.link} target="_blank" rel="noreferrer" title={item.alt}> <img src={item.img} alt={item.alt} width="70" height="70"/> </a></div>
-                )}
+                > <a onClick={()=>handleClickedIndex(index)}> 
+                        <img src={item.img} alt={item.alt} width="60" height="70"/> 
+                    </a>
+                 <p style={{ visibility:(index===clickedIndex?'visible':'hidden')  }}
+                > {item.description}
+                </p>
+                 
+                 <label style={{ gridRow:(index===clickedIndex?1:2) }}>{item.alt}</label>
+                </div>
+                
+               )}
                 {/* <div className="item">02</div>
                 <div className="item">03</div>
                 <div className="item">04</div>
