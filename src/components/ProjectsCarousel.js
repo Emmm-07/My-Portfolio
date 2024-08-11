@@ -59,7 +59,6 @@ const Carousel = ({items}) => {
         setClickedIndex(index === clickedIndex? null: index);
         console.log(clickedIndex);
     };
-    
     return (
         <div className="container drr">
             <hr />
@@ -82,10 +81,14 @@ const Carousel = ({items}) => {
              
                 <div className="item" key={index}
                      onDragStart={preventDragHandler}
-                > <a onClick={()=>handleClickedIndex(index)}> 
-                        <img src={item.img} alt={item.alt} width="60" height="70"/> 
-                    </a>
-                 <p style={{ visibility:(index===clickedIndex?'visible':'hidden')  }}
+                > <div className="itemContent" onClick={()=>handleClickedIndex(index)}> 
+
+                        <img style={{ filter:(index===clickedIndex?'blur(5px)':'blur(0)')}} src={item.img} alt={item.alt} width="60" height="70"/> 
+                        <a href="https://stackoverflow.com/" target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >View on Github</a> 
+                        <a href="https://colorhunt.co/" onClick={(e)=>(e.preventDefault())} target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >{item.isDeployed?"Visit Website":"View Demo"}</a>
+                    
+                    </div>
+                 <p style={{ visibility:(index===clickedIndex?'visible':'hidden') }}
                 > {item.description}
                 </p>
                  

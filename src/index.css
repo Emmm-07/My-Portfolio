@@ -27,7 +27,7 @@ html, body {
   scroll-behavior: smooth
 }
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -264,7 +264,7 @@ html, body {
 }
 
 
-.projects .item a{
+.projects .item .itemContent{
   border:#ffff44 2px solid;
   height: 18rem;
   width: 100%;
@@ -272,9 +272,10 @@ html, body {
   width: 100%;
   border-radius: 1rem ;
   margin: 1rem 0 1rem 0;
+  position: relative;
 }
 
-.projects .item a img{
+.projects .item .itemContent img{
   /* border: blue 2px solid; */
   width: 100%;
   height: 100%;
@@ -305,7 +306,7 @@ html, body {
 }
 
 
-.projects button{
+.projects .projectsBtn{
   border:1px white solid;
   height:50px;
   width:170px;
@@ -317,44 +318,170 @@ html, body {
   color:#333;
   float: right;
 }
-            /* Projects Modal */
-.modal-backdrop{
-  border: 50px solid green;
-  padding: 10rem;
-}
-.modal-dialog{
-  border: 2px solid blue;
-  /* position:fixed; */
-  margin:auto;
-  /* height: 100%; */
-  /* position: absolute; */
-}
-.modal-content {
-  background-color: #f8f9fa; /* Light background */
-  border-radius: 10px;
-  border: 2px solid red;
-  /* height: 100%;   */
-}
-
-.modal-header {
-  background-color: #007bff; /* Blue header */
-  color: white;
-  border-bottom: none;
+.projects .item .itemContent a{
+  text-decoration: none;
+  border: rgb(80, 77, 77) 2px solid;
+  background-color: transparent;
+  position: absolute;
+  height:5rem;
+  width:70%;
+  text-align:center;
+  margin:auto 0 auto 20px;
+  padding:15px;
+  border-radius:20px;
+  background-color:#333;
+  color:white;
+  font-weight: bold;
+  box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+    0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0, 0 0.3125em 0 0 #dedede,
+    0 0.375em 0 0 #dcdcdc, 0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+  /* z-index: 2; */
+  /* transition: background-color 3s; */
+  align-content: center;
 }
 
-.modal-footer {
-  border-top: none;
-}
-
-.modal-footer .btn {
+/* .projects .item a button:active{
   background-color: #007bff;
-  color: white;
+} */
+.projects .item .itemContent a:hover{
+  background-color: #ffff44;
+}
+.projects .item .itemContent a:first-of-type{
+  transform: translate(-128%,4rem);
+
+}
+.projects .item .itemContent a + a{
+  transform: translate(-128%,10rem);
 }
 
-.modal-footer .btn:hover {
-  background-color: #0056b3;
+        
+    /* Modal pop up */
+.f_modal {
+  display:block;
+  background:rgba(0, 0, 0, .8);
+  position:fixed;
+  left:0;
+  top:0;
+  height:100%;
+  width: 100%;
+  margin: auto;
+  z-index: 1000;
+  border: blue 3px solid;
 }
 
+.f_modal:target {
+  display:table;
+}
+
+.f_modal__dialog {
+  display:table-cell;
+  vertical-align:middle;
+  /* border: yellow 2px solid; */
+}
+
+.f_modal__content {
+  background: #333;
+  /* border-radius: 1rem; */
+  /* border-radius: 2rem; */
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideUp 0.3s ease-in-out;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  border: green 3px solid;
+  overflow: auto;
+}
+
+.f_modal_body{
+  /* position: absolute; */
+  border: red 2px solid;
+  /* height: 50rem; */
+  height: 100%;
+  width: 100%;
+  overflow:auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  padding: 3rem 1rem 2rem 2rem;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.f_modal_body .projectCard{
+  border: 3px red solid;
+  width: 25rem;
+  /* height: 25rem; */
+  display: grid;
+  grid-template-columns: 1fr;
+    /* grid-template-rows: auto auto auto; */
+}
+
+.projectCard:first-of-type{
+  /* height: 28rem; */
+}
+
+.projectCard section img{
+  width: 100%;
+  height: 15rem;
+  border: 3px rgb(17, 0, 255) solid;
+  border-radius: 1rem;
+}
+.projectCard section a{
+  /* position: absolute; */
+  border: #ffff44;
+ 
+}
+.projectCard section a:first-of-type{    
+  transform: translate(100%,-500%);
+}
+.projectCard section a + a{
+  transform: translate(10%,-300%);
+}
+.projectCard p{
+  width: 100%;
+  height: 10rem;
+  border: 3px rgb(0, 255, 26) solid;
+  display: none;
+}
+.projectCard h3{
+  width: 100%;
+  height: 10%;
+  border: 3px rgb(229, 255, 0) solid;
+  grid-row: 1;
+}
+
+.f_modal__close {
+  font-size: 30px;
+  color:#161616;
+  text-decoration: none;
+  position:absolute;
+  top: 0;
+  right: 0;
+  border: rgb(0, 234, 255) 3px solid;
+}
+
+
+.f_modal__close:hover{
+  color: blue;
+}
+
+@keyframes slideUp {
+  from {
+    opacity:0;
+    bottom: -200px;
+  }
+  to {
+    opacity:1;
+    bottom:0;
+  }
+}
 
 
 

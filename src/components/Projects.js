@@ -6,63 +6,79 @@ import { useState } from 'react';
 
 const Projects = () => {
     const projectList = [
-        {alt:"PALengke Waypoint Navigation",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", 
+        {alt:"Waypoint Navigation",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", 
           description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
-        {alt:"C++",isDeployed: true, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
+        {alt:"C++",isDeployed: false, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
           description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
         {alt:"CSS",isDeployed: true, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
           description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
   
         {alt:"Django",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
           description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
-
+        {alt:"Waypoint Navigation",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", 
+          description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
+        {alt:"C++",isDeployed: false, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
+          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+        {alt:"CSS",isDeployed: true, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+  
+        {alt:"Django",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
+          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+          {alt:"Waypoint Navigation",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", 
+            description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
+          {alt:"C++",isDeployed: false, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+          {alt:"CSS",isDeployed: true, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+    
+          {alt:"Django",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
+            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
+  
     ]
 
-    const [modalShow, setModalShow] = useState(false);
+    const [modalShow, setModalShow] = useState("none");
 
-    function MyVerticallyCenteredModal(props) {
 
-        return (
-          <Modal className='projects'
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {/* <h4>Centered Modal</h4>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
-              </p> */}
-
-                {/* CONTENT HERE */}
-              <Carousel items={projectList}/>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-        );
-      }
-      
     return (  
         <div className="projects" id="projects">
             <h2>Projects</h2>
             <Carousel items={projectList}/>
 
-            <button onClick={() => setModalShow(true)}>See all projects</button>
-
+            <button className="projectsBtn" onClick={()=>setModalShow("block")}>See all projects</button>
+            {/* <button className="projectsBtn" onClick={() => setModalShow(true)}>See all projects</button> */}
+{/* 
             <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-            />
+            /> */}
+
+          <div>
+            <div className="f_modal" id="f_modal" style={{ display:modalShow }}> 
+            <div className="f_modal__dialog">
+              <section className="f_modal__content">
+              <div>
+                <a href="#" className="f_modal__close" onClick={()=>setModalShow("none")}>&times;</a>
+                  <div className="f_modal_body">
+                    {/* <h1 className="projectCard" >Hello</h1> */}
+                    {projectList.map((item,index)=>
+                      
+                      <div className="projectCard" key={index}>
+                        <section>
+                          <img src="" alt="" />
+                          <a href=''>View on github</a>
+                          <a href='' >View on Web</a>
+                        </section>
+                        <p></p>
+                        <h3>{item.alt}</h3>
+                      </div>
+
+                    )}
+                  </div>
+              </div>
+              </section>
+            </div>
+          </div>
+        </div> 
         </div>
 
         
