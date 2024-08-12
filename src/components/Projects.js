@@ -38,6 +38,11 @@ const Projects = () => {
 
     const [modalShow, setModalShow] = useState("none");
 
+    const [clickedIndex,setClickedIndex] = useState(null);
+    const handleClickedIndex = (index) =>{
+        setClickedIndex(index === clickedIndex? null: index);
+        console.log(clickedIndex);
+    }
 
     return (  
         <div className="projects" id="projects">
@@ -45,13 +50,8 @@ const Projects = () => {
             <Carousel items={projectList}/>
 
             <button className="projectsBtn" onClick={()=>setModalShow("block")}>See all projects</button>
-            {/* <button className="projectsBtn" onClick={() => setModalShow(true)}>See all projects</button> */}
-{/* 
-            <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            /> */}
 
+          {/* Modal */}
           <div>
             <div className="f_modal" id="f_modal" style={{ display:modalShow }}> 
             <div className="f_modal__dialog">
@@ -59,25 +59,26 @@ const Projects = () => {
               <div>
                 <a href="#" className="f_modal__close" onClick={()=>setModalShow("none")}>&times;</a>
                   <div className="f_modal_body">
-                    {/* <h1 className="projectCard" >Hello</h1> */}
                     {projectList.map((item,index)=>
                       
-                      <div className="projectCard" key={index}>
+                      <div className="projectCard" key={index} onClick={()=>handleClickedIndex(index)}>
                         <section>
-                          <img src="" alt="" />
-                          <a href=''>View on github</a>
-                          <a href='' >View on Web</a>
+                          <img style={{ filter:(index===clickedIndex?'blur(5px)':'blur(0)')}} src={item.img} alt={item.alt}/>
+                          <a href='' target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >View on github</a>
+                          <a href='' target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >{item.isDeployed?"Visit Website":"View Demo"}</a>
                         </section>
-                        <p></p>
+
+                        <p style={{ display:(index===clickedIndex?'block':'none') }} >{item.description}</p>
                         <h3>{item.alt}</h3>
                       </div>
-
                     )}
                   </div>
               </div>
               </section>
             </div>
           </div>
+
+
         </div> 
         </div>
 
