@@ -1,6 +1,7 @@
 import getInTouchImg from "../images/get_in_touch.png"
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+//Reference for emailjs: https://www.youtube.com/watch?v=I4DKr1JLC50&t=668s
 const Contact = () => {
   const form = useRef();
 
@@ -16,7 +17,8 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          form.current.reset();
+          alert("Email successfully sent");
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -36,11 +38,11 @@ const Contact = () => {
                     <div></div>
 
                     <form ref={form} onSubmit={sendEmail}>
-                        <input type="text" placeholder="First Name" name="fn"/>
-                        <input type="text" placeholder="Last Name" name="ln"/>
-                        <input type="email" placeholder="Email Address" name="email"/>
-                        <input type="text" placeholder="Subject" name="subject"/>
-                        <textarea placeholder="Message" name="message"></textarea>
+                        <input type="text" placeholder="First Name" name="fn" required/>
+                        <input type="text" placeholder="Last Name" name="ln" required/>
+                        <input type="email" placeholder="Email Address" name="email" required/>
+                        <input type="text" placeholder="Subject" name="subject" required/>
+                        <textarea placeholder="Message" name="message" required></textarea>
                         <input type="submit" value="Send" />
                     </form>
 

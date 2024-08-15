@@ -5,7 +5,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import menubar from '../images/menu.png'
 import closemenu from '../images/close.png';
 import { useState,useEffect } from "react";
-
+import { useTypewriter,Cursor } from "react-simple-typewriter";
 
 const Navbar = () => {
     const socialsStyle = {border: '1px white solid', padding:'8px',height:'30px',width:'30px',marginRight:'10px',borderRadius:'15px',color:'blue'};
@@ -22,7 +22,7 @@ const Navbar = () => {
       
       return () => {
         window.removeEventListener('resize', handleResize);
-        console.log(screenWidth);
+        // console.log(screenWidth);
         setMenuDisplay('none');                  //The menu bar will will be automatically hidden if the screen size changes
       };
     }, [screenWidth]);
@@ -40,19 +40,29 @@ const Navbar = () => {
         });
     };
 
+    const [typeEffect] = useTypewriter({
+        words: ['Jm Balatico'],
+        loop:{},
+        speed:100,
+        deleteSpeed:100
+    })
+
     return (  
-        <div className="navbar" id='navbar'>
-            <h1>Jm Balatico</h1>
-           
+        <div className="navbar" id='navbar'>   
+            <h1 onClick={(e)=> scrollToSection('homepage',e)}>{typeEffect}</h1>
+            
             <ul className="links">  
                 <li><a href="#" onClick={(e) => scrollToSection('homepage', e)}>Home</a></li>
                 <li><a href="#" onClick={(e) => scrollToSection('skills', e)}>Skills</a></li> 
                 <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
                 
                 {/* <li style={{ padding:'0',margin:'auto'}}> */}
-                    <FaFacebookF style={socialsStyle}/>
-                    <FaGithub style={socialsStyle}/>
-                    <FaLinkedinIn style={socialsStyle}/>
+                    <FaFacebookF style={socialsStyle} onClick={()=>window.open('https://web.facebook.com/john.balatico.1/',
+                        '_blank','noopener','noreferrer')}/>
+                    <FaGithub style={socialsStyle}onClick={()=>window.open('https://github.com/Emmm-07',
+                        '_blank','noopener','noreferrer')}/>
+                    <FaLinkedinIn style={socialsStyle} onClick={()=>window.open('https://www.linkedin.com/in/john-michael-balatico-ba328530a/',
+                        '_blank','noopener','noreferrer')}/>
                 {/* </li> */}
                 <li className="connectBtn" onClick={(e) => scrollToSection('contact', e)}>
                     Let's Connect
