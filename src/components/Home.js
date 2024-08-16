@@ -1,8 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import logo from '../images/logo.png';
+import useInterSectionObserver from './useIntersectionObserver';
+import classNames from 'classnames/bind';
+
 const Home = () => {
+    const [ref,isInView] = useInterSectionObserver();
     return (  
-        <div className="homepage" id='homepage' style={{height:'90vh',}}>
+        <div ref={ref} className={classNames("homepage hidden",{show:isInView})} id='homepage' style={{height:'90vh',}}>
             <div className='intro-text'>
                 <h4>Welcome to my portfolio</h4>
                 <h1>Hi! I'm JM</h1>

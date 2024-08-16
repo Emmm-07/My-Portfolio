@@ -1,9 +1,12 @@
 import getInTouchImg from "../images/get_in_touch.png"
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import useInterSectionObserver from "./useIntersectionObserver";
+import classNames from "classnames";
 //Reference for emailjs: https://www.youtube.com/watch?v=I4DKr1JLC50&t=668s
 const Contact = () => {
   const form = useRef();
+  const [ref,isInView] = useInterSectionObserver();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -27,7 +30,7 @@ const Contact = () => {
   };
 
     return (  
-        <div className="contact" id="contact">
+        <div ref={ref} className={classNames("contact hidden",{show:isInView})} id="contact">
            
             <div className="content">
                 <div className="imgContainer">

@@ -3,11 +3,15 @@
 import Carousel from "./SkillsCarousel";
 import mitLogo from  "../images/mit_logo.png"
 import "../SkillsCarousel.css";
+import useInterSectionObserver from "./useIntersectionObserver";
+import classNames from "classnames/bind";
 const Skills = () => {
 //https://www.youtube.com/watch?v=l3aKPVx_EK0  
     
 //https://formidablelabs.github.io/react-swipeable/                          SWIPEABLE
 // https://www.youtube.com/watch?v=uj1LLh-IahM
+
+    const [ref,isInView] = useInterSectionObserver();
 
     const  languageList = [
         {alt:"Python", link: "https://www.python.org", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"},
@@ -39,28 +43,12 @@ const Skills = () => {
     ]
 
     return (  
-        <div className="skills" id='skills'>
+        <div ref={ref} className={classNames("skills hidden",{show:isInView})} id='skills' >
               <h2>Skills</h2> 
 
               <div>
                 <div className="languages">
                     <h3>Languages</h3>
-                    {/* <div style={{ width: '50%', margin: '0' }}>
-                        <Carousel fade>
-
-                        {languageList.map(language => 
-                        <Carousel.Item>
-                            <div style={{ height: '10rem', background: 'transparent', display: 'flex', justifyContent: 'left', alignItems: 'left' }}></div>
-                            <Carousel.Caption >
-                                {language.map(data =>
-                                <a href={data.link} target="_blank" rel="noreferrer" title={data.alt}> <img src={data.img} alt={data.alt} width="80" height="80"/> </a>
-                                 )}      
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        )}
-                        </Carousel>
-                        </div> */}
-
                     <Carousel items={languageList}/>
                 </div>
 

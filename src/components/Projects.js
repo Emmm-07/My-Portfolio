@@ -3,8 +3,12 @@ import "../index.css";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+import useInterSectionObserver from './useIntersectionObserver';
+import classNames from 'classnames/bind';
 
 const Projects = () => {
+  const [ref,isInView] = useInterSectionObserver();
+
     const projectList = [
         {alt:"Waypoint Navigation",isDeployed: true, img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg", 
           description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
@@ -39,13 +43,16 @@ const Projects = () => {
     const [modalShow, setModalShow] = useState("none");
 
     const [clickedIndex,setClickedIndex] = useState(null);
+    
     const handleClickedIndex = (index) =>{
         setClickedIndex(index === clickedIndex? null: index);
         console.log(clickedIndex);
     }
 
-    return (  
-        <div className="projects" id="projects">
+
+    return (    
+        <div ref={ref} className={classNames("projects hidden",{ show:isInView})} id="projects">
+          {console.log(isInView)}
             <h2>Projects</h2>
             <Carousel items={projectList}/>
 
@@ -77,9 +84,9 @@ const Projects = () => {
               </section>
             </div>
           </div>
-
-
         </div> 
+
+
         </div>
 
         

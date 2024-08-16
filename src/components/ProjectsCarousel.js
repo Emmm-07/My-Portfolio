@@ -15,7 +15,6 @@ const Carousel = ({items}) => {
     const itemsContainer = useRef();
 
     const preventDragHandler = (e) => {
-        console.log("Hello")
         e.preventDefault();
     }
 
@@ -84,7 +83,7 @@ const Carousel = ({items}) => {
                 > <div className="itemContent" onClick={()=>handleClickedIndex(index)}> 
 
                         <img style={{ filter:(index===clickedIndex?'blur(5px)':'blur(0)')}} src={item.img} alt={item.alt} width="60" height="70"/> 
-                        <a href="https://stackoverflow.com/" target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >View Source Code</a> 
+                        <a href="https://stackoverflow.com/" target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >View Source Code     </a> 
                         <a href="https://colorhunt.co/" onClick={(e)=>(e.preventDefault())} target="_blank" style={{ visibility:(index===clickedIndex?'visible':'hidden') }} >{item.isDeployed?"Visit Website":"View Demo"}</a>     
                     </div>
 

@@ -41,14 +41,15 @@ const Navbar = () => {
     };
 
     const [typeEffect] = useTypewriter({
-        words: ['Jm Balatico'],
+        words: ['Jm Balatico','Computer Engineering'],
         loop:{},
         speed:100,
         deleteSpeed:100
     })
 
+    
     return (  
-        <div className="navbar" id='navbar'>   
+        <div className="navbar show" id='navbar'>   
             <h1 onClick={(e)=> scrollToSection('homepage',e)}>{typeEffect}</h1>
             
             <ul className="links">  
