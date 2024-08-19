@@ -6,7 +6,6 @@ import loc from "../images/loc.png"
 import clock from "../images/clock.png"
 import { useEffect, useState } from 'react';
 const Footer = () => {
-    const socialsStyle = {border: '3px #ffff44 solid', padding:'8px',height:'40px',width:'40px',marginRight:'10px',borderRadius:'20px'};
     const [currTime, setCurrTime] = useState('');
 
     useEffect(()=>{
@@ -41,11 +40,15 @@ const Footer = () => {
                     <label>{currTime} (UTC + 08:00)</label>
                 </div>
                 <div>
-                    <FaFacebookF style={socialsStyle}/>
-                    <FaGithub style={socialsStyle}/>
-                    <FaLinkedinIn style={socialsStyle}/></div>
-                </div>      
-            </div>
+                    <FaFacebookF  onClick={()=>window.open('https://web.facebook.com/john.balatico.1/',
+                        '_blank','noopener','noreferrer')}/>
+                    <FaGithub onClick={()=>window.open('https://github.com/Emmm-07',
+                        '_blank','noopener','noreferrer')}/>
+                    <FaLinkedinIn onClick={()=>window.open('https://www.linkedin.com/in/john-michael-balatico-ba328530a/',
+                        '_blank','noopener','noreferrer')}/>
+                </div>
+            </div>      
+        </div>
 
     );
 }
