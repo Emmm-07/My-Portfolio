@@ -164,11 +164,8 @@ html, body {
   scale: 1.05;
   cursor: pointer;
 }
-.navbar .hidden-menu .connectBtn:hover{
-  scale: 1.03;
-  cursor: pointer;
-}
-.navbar .links .connectBtn:active, .navbar .hidden-menu .connectBtn:active{
+
+.navbar .links .connectBtn:active{
   scale: 0.9;
 }
 .navbar .menuBtn{
@@ -822,6 +819,9 @@ html, body {
     scale: 1.2;
     cursor: pointer;
   }
+  .navbar .hidden-menu li:active{
+    scale: 0.9;
+  }
   .navbar .hidden-menu .connectBtn{
     margin:auto;
     width: 100%;
@@ -829,6 +829,14 @@ html, body {
     border-top-left-radius: 0;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
+  }
+  .navbar .hidden-menu .connectBtn:hover{
+    scale: 1;
+    cursor: pointer;
+    border-radius: 1rem;
+  }
+  .navbar .hidden-menu .connectBtn:active{
+    scale: 0.9;
   }
   .homepage{
     margin-top: 5rem;
