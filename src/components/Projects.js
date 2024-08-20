@@ -9,18 +9,15 @@ import palengke from '../images/palengke.png'
 import fourtitudeGarage from "../images/fourtitudeGarage.png"
 
 const Projects = () => {
-  const [ref,isInView] = useInterSectionObserver();
+  const [ref,isInView,isScrollUp] = useInterSectionObserver();
 
     const projectList = [
         {alt:"Waypoint Navigation",isDeployed: false, img: palengke,  github:"https://github.com/Emmm-07/PALengke-Sofdes-Project", link:"https://reccloud.com/u/2m4r3zj",
           description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
         
           {alt:"Fourtitude Garage",isDeployed: false, img: fourtitudeGarage, github:"https://github.com/Emmm-07/Fourtitude-Garage", link:"https://reccloud.com/u/onegqtq",
-         
-            description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
-        {alt:"CSS",isDeployed: true, img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
-          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
-  
+            description:"A Point of Sale (POS) system for automobile shops that facilitate the functions of buying a car, renting a car, and car servicing with a database system that will store transactions."},
+       
        
     ]
 
@@ -35,7 +32,11 @@ const Projects = () => {
 
 
     return (    
-        <div ref={ref} className={classNames("projects hidden",{ show:isInView})} id="projects">
+        <div ref={ref} className={classNames("projects",{ 
+          hidden: !isInView && !isScrollUp,
+          show:isInView
+          })} id="projects">
+
             <h2>Projects</h2>
             <Carousel items={projectList}/>
 

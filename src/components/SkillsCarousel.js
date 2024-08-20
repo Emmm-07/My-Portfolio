@@ -15,7 +15,7 @@ const SkillsCarousel = ({items}) => {
     const itemsContainer = useRef();
 
     const preventDragHandler = (e) => {
-        console.log("Hello")
+        // console.log("Hello")
         e.preventDefault();
     }
 
@@ -82,10 +82,6 @@ const SkillsCarousel = ({items}) => {
                 </div>
                 
                )}
-                {/* <div className="item">02</div>
-                <div className="item">03</div>
-                <div className="item">04</div>
-                <div className="item">05</div> */}
                 
             </div>
         </div>

@@ -1,8 +1,16 @@
 :root{
-  --primary-color: #333 ;
-  --secondary-color: white;
-  --tertiary-color: #ffff44;
-  
+  --primary-color:   #333 ;
+  /* #333 */
+  --secondary-color: #fdf1f5 ;
+  /* #f2cff1 */
+  /* #ece7e2 */
+  /* #d9e0a4 */
+  /* white */
+  --tertiary-color:  #ee8e46 ;
+  /* #285b23 */
+  /* #4a7766 */
+  /* #ffff44 */
+  /* #19485f */
 }
 *{
   box-sizing: border-box;
@@ -69,19 +77,18 @@ html, body {
   /* border: red 2px solid; */
   width: 100%;
   padding: 0 0.5rem;
-  /* opacity: 1; */
-  /* transition: all 1s; */
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 .hidden{
   opacity: 0;
   margin-left: -50%;
-  transition: all 1s ease;
+  transition: all 2s ease;
 }
 .show{
-  background-color: transparent;
   opacity: 1;
   margin-left: 0;
-  /* transition: all 1s; */
+  transition: all 1s ease;
   
 }
 @media(prefers-resuced-motion){
@@ -135,28 +142,10 @@ html, body {
   scale: 1.2;
   cursor: pointer;
 }
-.navbar .links li:active{
+.navbar  .links :active{
   scale: 1;
 }
-.navbar .links svg{
-  margin: auto;
-  /* color:  var(--tertiary-color); */
-  /* background-color: white; */
-  border: 2px solid var(--tertiary-color); 
-  padding:8px;
-  height:30px;
-  width:30px;
-  margin-right:10px;
-  border-radius:15px;
 
-}
-.navbar .links svg:hover{
-  scale: 1.2;
-  cursor: pointer;  
-}
-.navbar .links svg:active{
-  scale: 1;
-}
 .navbar .links .connectBtn, .navbar .connectBtn{
   /* border:1px var(--secondary-color) solid; */
   height:50px;
@@ -167,15 +156,18 @@ html, body {
   border-radius:20px;
   background-color:var(--tertiary-color);
   color: var(--primary-color);
-  text-shadow: 1px 1px var(--secondary-color);
+  text-shadow: 1px 1px black;
 }
 
 .navbar .links .connectBtn:hover{
   scale: 1.05;
   cursor: pointer;
 }
-
-.navbar .links .connectBtn:active{
+.navbar .hidden-menu .connectBtn:hover{
+  scale: 1.03;
+  cursor: pointer;
+}
+.navbar .links .connectBtn:active, .navbar .hidden-menu .connectBtn:active{
   scale: 0.9;
 }
 .navbar .menuBtn{
@@ -183,7 +175,9 @@ html, body {
   background-color: transparent;
   display: none;
 }
-
+.navbar .menuBtn img{
+  width: 30px;
+}
 
 .navbar .hidden-menu{
   display: none;
@@ -195,6 +189,7 @@ html, body {
   margin-bottom: 5rem;
   display:grid;
   grid-template-columns: 50% 50%;
+  height:90vh;
   /* grid-template-rows: 1fr; */
   /* border: 2px red solid; */
 }
@@ -227,18 +222,37 @@ html, body {
   color: pink;
 
 } */
-
+.homepage .logoCont{
+  /* border: red 2px solid; */
+  /* align-items: center;
+  justify-content: center; */
+  /* align-content: center; */
+  text-align: center;
+}
 .homepage img{
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: auto;
+  width: 500px;
+  margin: auto;
+  filter: drop-shadow(-15px 15px black);
+  /* margin-right: auto; */
+  height: 35rem;
+  width: 25rem;
+  /* border: red 2px solid; */
 }
 
 
 /* Skills   */
+.skills{
+  /* padding-top: 5rem; */
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* border: red 2px solid; */
+}
 .skills h2{
   text-align: center;
   font-weight: bold;
+  text-shadow: 10px 10px 10px black;
 }
 .skills h3{
   text-shadow: 10px 10px 10px black;
@@ -264,6 +278,7 @@ html, body {
 .projects h2{
   text-align: center;
   font-weight: bold;
+  text-shadow: 10px 10px 10px black;
 }
 
                           /* Projects Carousel  */
@@ -315,7 +330,8 @@ html, body {
 
 
 .projects .item .itemContent{
-  border:var(--tertiary-color) 2px solid;
+  /* border:var(--tertiary-color) 2px solid; */
+  box-shadow: 5px 5px var(--tertiary-color);
   height: 18rem;
   width: 100%;
   align-self: flex-start;
@@ -323,6 +339,7 @@ html, body {
   border-radius: 1rem ;
   margin: 1rem 0 1rem 0;
   position: relative; 
+  background-color: #cacaca;
 }
 
 .projects .item .itemContent img{
@@ -332,6 +349,7 @@ html, body {
   border-radius: 1rem;
 }
 .projects  .item p{
+  font-size: 0.9rem;
   border: var(--secondary-color) 2px solid;
   border-top: none;
   border-radius: 1rem;
@@ -340,8 +358,10 @@ html, body {
   overflow-wrap: break-word;
   white-space: normal;
   /* margin-top: 10rem; */
+  padding-top: 0.6rem;
   height: 10rem;
   transition: grid-row 5s;
+
 }
 
 .projects .item label{
@@ -368,7 +388,15 @@ html, body {
   background-color:var(--secondary-color);
   color:var(--primary-color);
   float: right;
+  box-shadow: 5px 5px black;
 }
+.projects .projectsBtn:hover{
+  scale: 1.05;
+}
+.projects .projectsBtn:active{
+  scale: 0.8;
+}
+
 .projects .item .itemContent a{
   text-decoration: none;
   border: rgb(80, 77, 77) 2px solid;
@@ -673,7 +701,11 @@ html, body {
   border-radius:20px;
   background-color:var(--tertiary-color);
   color:var(--primary-color);
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px black;
+  font-weight: 1000;
+
+ 
+  text-shadow: 1px 1px black;
 }
 .contact .content .container form input[type="submit"]:hover{
   scale: 1.05;
@@ -684,8 +716,10 @@ html, body {
 .footer{
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
-  margin-top: 10rem;
-  /* border: red 2px solid; */
+  margin-top: 9rem;
+  border-top: 2px solid var(--tertiary-color);
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 
 }
 .footer div div{
@@ -694,7 +728,7 @@ html, body {
 }
 
 .footer svg{
-  border: 3px #ffff44 solid;
+  border: 3px solid var(--tertiary-color);
    padding:8px;
    height:40px;
    width:40px;
@@ -710,8 +744,11 @@ html, body {
 .footer div svg:active{
   scale:0.9;
 }
-
+.footer .logoContainer{
+  /* border: red 2px solid; */
+}
 .footer div img{
+  /* border: red 2px solid; */
   transform: 0;
   transition: transform 2s;
 }
@@ -764,7 +801,8 @@ html, body {
     top: 4.5rem;
     /* background-color: rgba(255, 255, 255, 0.); */
     background-color: whitesmoke;
-    width: 35%;
+    /* width: 35%; */
+    width: 12rem;
     border-radius: 1rem;
     z-index: 1;
     
@@ -782,7 +820,14 @@ html, body {
     scale: 1.2;
     cursor: pointer;
   }
-
+  .navbar .hidden-menu .connectBtn{
+    margin:auto;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
   .homepage{
     margin-top: 5rem;
   }

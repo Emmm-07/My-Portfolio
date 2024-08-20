@@ -11,7 +11,7 @@ const Skills = () => {
 //https://formidablelabs.github.io/react-swipeable/                          SWIPEABLE
 // https://www.youtube.com/watch?v=uj1LLh-IahM
 
-    const [ref,isInView] = useInterSectionObserver();
+    const [ref,isInView,isScrollUp] = useInterSectionObserver();
 
     const  languageList = [
         {alt:"Python", link: "https://www.python.org", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"},
@@ -43,7 +43,10 @@ const Skills = () => {
     ]
 
     return (  
-        <div ref={ref} className={classNames("skills hidden",{show:isInView})} id='skills' >
+        <div ref={ref} className={classNames("skills",{ 
+            hidden: !isInView && !isScrollUp,
+            show:isInView
+            })} id='skills' >
               <h2>Skills</h2> 
 
               <div>

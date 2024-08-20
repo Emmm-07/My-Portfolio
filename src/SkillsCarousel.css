@@ -43,7 +43,8 @@
     transition: transform 3s;
 
     background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #ffff44;
+    /* border: 2px solid var(--secondary-color); */
+    box-shadow: 5px 5px black;
 /* 
     display: grid;
     grid-template-columns: 100px; */
@@ -59,15 +60,20 @@
   }
 
   .skills .item label{
-    /* position: absolute; */
-    /* margin-top: 8rem; */
+
     font-size: small;
-    /* border: red 2px solid; */
-    /* margin-left: 2.5rem; */
     display: none;
+    /* opacity: 0; */
     align-items: center;
     align-content: center;
+    transition: all 2s;
 
+  }
+  .skills .item:hover label{
+    /* opacity: 1; */
+    display: block;
+    text-align: center;
+    transition: all 2s;
   }
 
   .skills .item a{
@@ -79,11 +85,6 @@
   .skills .item a img{
       /* border: blue 2px solid; */
       margin: 0 auto;
-  }
-  .skills .item:hover label{
-    display: block;
-    /* color: #333; */
-    text-align: center;
   }
 
   .skills .activeItems {

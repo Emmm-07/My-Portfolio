@@ -24,8 +24,8 @@ const Footer = () => {
 
     return (  
         <div className="footer">
-            <div>
-                <img src={logo} alt="logo" width={300}/>
+            <div className="logoContainer">
+                <img src={logo} alt="logo" width={230}/>
             </div>
             <div></div>
             <div>
