@@ -82,15 +82,7 @@ const Navbar = () => {
                 <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
             
 
-                {/* <li style={{ padding:'0',margin:'auto'}}> */}
-                    {/* <FaFacebookF onClick={()=>window.open('https://web.facebook.com/john.balatico.1/',
-                        '_blank','noopener','noreferrer')}/>
-                    <FaGithub onClick={()=>window.open('https://github.com/Emmm-07',
-                        '_blank','noopener','noreferrer')}/>
-                    <FaLinkedinIn onClick={()=>window.open('https://www.linkedin.com/in/john-michael-balatico-ba328530a/',
-                        '_blank','noopener','noreferrer')}/>
-                   */}
-                {/* </li> */}
+
                 
                 <li className="connectBtn" onClick={(e) => scrollToSection('contact', e)}>
                     Let's Connect

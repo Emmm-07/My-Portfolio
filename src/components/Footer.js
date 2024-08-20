@@ -27,17 +27,16 @@ const Footer = () => {
             <div className="logoContainer">
                 <img src={logo} alt="logo" width={230}/>
             </div>
-            <div></div>
-            <div>
+            <div className="fillerDiv"></div>
+            
+            <div className="locNtime">
                 <div>
-                    <img src={loc} alt="" height={30} />
-                    &nbsp;
-                    <label>Metro Manila, Philippines</label>
+                    <label><img src={loc} alt="" height={30} /> &nbsp;Metro Manila, Philippines</label>
                 </div>
+
                 <div>
-                    <img src={clock} alt="" height={30} />
-                    &nbsp;
-                    <label>{currTime} (UTC + 08:00)</label>
+
+                    <label><img src={clock} alt="" height={30} />&nbsp; {currTime} (UTC + 08:00)</label>
                 </div>
                 <div>
                     <FaFacebookF  onClick={()=>window.open('https://web.facebook.com/john.balatico.1/',

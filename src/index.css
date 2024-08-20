@@ -142,9 +142,10 @@ html, body {
   scale: 1.2;
   cursor: pointer;
 }
-.navbar  .links :active{
+.navbar  .links li:active{
   scale: 1;
 }
+
 
 .navbar .links .connectBtn, .navbar .connectBtn{
   /* border:1px var(--secondary-color) solid; */
@@ -176,7 +177,7 @@ html, body {
   display: none;
 }
 .navbar .menuBtn img{
-  width: 30px;
+  width: 28px;
 }
 
 .navbar .hidden-menu{
@@ -786,6 +787,7 @@ html, body {
     padding: 0.5rem;
     max-width: 100%;
   }
+ 
   .navbar .links{
     display: none;
   }
@@ -878,10 +880,12 @@ html, body {
     margin-bottom: 20px;
     margin-right: auto;
     width: 100%;
-    
   }
+  .footer{
+    grid-template-columns: 1fr 1fr 0.7fr;
+  }
+    
 }
-
 
 
 
@@ -917,6 +921,9 @@ html, body {
     grid-column: 1;
     /* grid-row: 5/8; */
   }
+  .footer{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 
@@ -948,8 +955,25 @@ html, body {
     /* margin-right:80rem; */
   }  
 
-  
-
+  .footer .logoContainer{
+    display: none;
+  }
+  .footer .fillerDiv{
+    display: none;
+  }
+  .footer .locNtime{
+    /* border: red 2px solid; */
+    width: 20rem;
+  }
+  .footer{
+    /* justify-content: center; */
+    /* border: red 2px solid;   */
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .footer label{
+    font-size: 1rem;
+  }
 
 
 
@@ -963,25 +987,11 @@ html, body {
   .navbar{
     max-width: 100%;
   }
-  /* .contact{
-    width: 100%;
+  .footer{
+    grid-template-columns: 1fr 0fr 1fr;
   }
-  .contact .imgContainer{
-    border: blue 5px solid;
-    width: 80%;
+  .footer label{
+    font-size: 1rem;
   }
-  .contact .imgContainer img{
-    border: red 2px solid;
-    width: 100%;
-  }
-  .contact .content{
-    grid-template-columns: 1fr ;
-    width: 100%;
-    border: red 2px solid;
-  }
-
-  .contact .content .container{
-    width: 100%;
-  } */
    
 } 
