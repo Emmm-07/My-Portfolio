@@ -8,11 +8,15 @@ import classNames from 'classnames/bind';
 import palengke from '../images/palengke.png'
 import fourtitudeGarage from "../images/fourtitudeGarage.png"
 import bloggaHub from "../images/bloggaHub.png"
+import chatApp  from "../images/chatapp-img.png"
 
 const Projects = () => {
   const [ref,isInView,isScrollUp] = useInterSectionObserver();
 
     const projectList = [
+        {alt:"Chat App",isDeployed: true, img: chatApp,  github:"https://github.com/Emmm-07/Chat-Application_DjangoxReactJS", link:"https://em-chat-three.vercel.app/",
+          description:"A real-time chat application built using React.js, Django, Django Channels, and Redis, with JWT authentication for secure user management. The application provides seamless real-time messaging, online user status updates, and in-app notifications to enhance user engagement."},
+
         {alt:"Waypoint Navigation",isDeployed: false, img: palengke,  github:"https://github.com/Emmm-07/PALengke-Sofdes-Project", link:"https://reccloud.com/u/2m4r3zj",
           description:"A platform where customers of the public market can find specific products they are looking for. This platform can also provide them with navigation routes with the kiosk as the starting point for new customers who are unfamiliar with the market layout. Users can view which stores sell the product they are looking for. "},
         
