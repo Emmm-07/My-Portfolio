@@ -21,6 +21,7 @@ const Skills = () => {
         {alt:"HTML", link: "https://www.w3.org/html/", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"},
         {alt:"Javascript", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"},
         {alt:"Java", link: "https://www.java.com", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"},
+        {alt:"TypeScript", link: "https://www.typescriptlang.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"},
     ]
 
     const  frameworkList = [
@@ -31,15 +32,17 @@ const Skills = () => {
             {alt:"Scikit-Learn", link: "https://scikit-learn.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"},
             {alt:"OpenCV", link:"https://opencv.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"},
             {alt:"Arduino", link: "https://www.arduino.cc/", img: "https://cdn.worldvectorlogo.com/logos/arduino-1.svg"},
+            {alt:"Next.Js", link: "https://nextjs.org/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"},
         ]
     const  otherList = [
         {alt:"Bash", link: "https://www.gnu.org/software/bash/", img: "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg"},
         {alt:"Git", link: "https://git-scm.com/", img: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"},
-        {alt:"Firebase", link: "https://firebase.google.com/", img: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"},
+        {alt:"MongoDB", link: "https://www.mongodb.com/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"},
 
         {alt:"SQLite", link: "https://www.sqlite.org/", img: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"},
         {alt:"MySQL", link:"https://www.mysql.com/", img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"},
         {alt:"MIT App Inventor", link: "https://ai2.appinventor.mit.edu/", img: mitLogo},
+        {alt:"Postman", link: "https://www.postman.com/", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"},
     ]
 
     return (  
