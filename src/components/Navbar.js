@@ -51,6 +51,7 @@ const Navbar = () => {
             <ul className="links">  
                 <li><a href="#" onClick={(e) => scrollToSection('homepage', e)}>Home</a></li>
                 <li><a href="#" onClick={(e) => scrollToSection('skills', e)}>Skills</a></li> 
+                <li><a href="#" onClick={(e) => scrollToSection('experience', e)}>Experience</a></li>
                 <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
                 
                 {/* <li style={{ padding:'0',margin:'auto'}}> */}
@@ -79,6 +80,7 @@ const Navbar = () => {
             <div className="hidden-menu" style={{ display: menuDisplay}}>  
                 <li><a href="#" onClick={(e) => scrollToSection('homepage', e)}>Home</a></li>
                 <li><a href="#" onClick={(e) => scrollToSection('skills', e)}>Skills</a></li> 
+                <li><a href="#" onClick={(e) => scrollToSection('experience', e)}>Experience</a></li>
                 <li><a href="#" onClick={(e) => scrollToSection('projects', e)}>Projects</a></li>
             
 

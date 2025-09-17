@@ -72,7 +72,7 @@ html, body {
 }
 
 
-.navbar,.homepage,.skills,.projects,.contact{
+.navbar,.homepage,.skills,.experience,.projects,.contact{
   scroll-snap-align: start;
   /* border: red 2px solid; */
   width: 100%;
@@ -254,6 +254,124 @@ html, body {
 }
 .skills h3{
   text-shadow: 10px 10px 10px black;
+}
+
+
+/* Experience */
+.experience {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* border: red 2px solid; */
+}
+
+.experience h2 {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 10px 10px 10px black;
+  margin-bottom: 3rem;
+}
+
+.experience .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.experience-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.experience-item {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.experience-content {
+  background: linear-gradient(135deg, rgba(238, 142, 70, 0.1), rgba(253, 241, 245, 0.05));
+  border: 2px solid var(--tertiary-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--secondary-color);
+}
+
+.experience-content h3 {
+  color: var(--tertiary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.experience-content h4 {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience-content .duration {
+  color: var(--tertiary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.experience-content .description {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.experience-content .description li {
+  color: var(--secondary-color);
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.experience-content .description li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--tertiary-color);
+  font-size: 0.8rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: var(--tertiary-color);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 /* .carousel-control-prev{
   display: none;
@@ -758,7 +876,7 @@ html, body {
 
 
 @media screen and (max-width: 1310px) {
-  .homepage,.skills{
+  .homepage,.skills,.experience{
     max-width: 100%;
   }
   .navbar{
@@ -774,7 +892,7 @@ html, body {
 
 /*           Laptop Screen       */
 @media screen and (max-width: 1024px) {
-.homepage,.skills{
+.homepage,.skills,.experience{
     max-width: 1024px;
     /* margin: 0 auto; */
   }
@@ -851,6 +969,15 @@ html, body {
     /* grid-row: 5/8; */
   }
 
+  /* Experience responsive styles for laptop */
+  .experience-timeline {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .experience-content {
+    padding: 1.5rem;
+  }
 
   
   .homepage{
@@ -907,7 +1034,7 @@ html, body {
 /*           Tablet Screen       */
 @media screen and (max-width: 768px) {
   
-.homepage,.skills{
+.homepage,.skills,.experience{
     max-width: 768px;
     /* margin: 0 auto; */
   }
@@ -929,6 +1056,33 @@ html, body {
     grid-column: 1;
     /* grid-row: 5/8; */
   }
+
+  /* Experience responsive styles for tablet */
+  .experience-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-content {
+    padding: 1.5rem;
+  }
+
+  .experience-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .experience-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .experience-content .description li {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.6rem;
+  }
+
   .footer{
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -937,13 +1091,50 @@ html, body {
 
 /*           Mobile Screen       */
 @media screen and (max-width: 550px) {
-  .homepage,.skills{
+  .homepage,.skills,.experience{
     max-width: 550px;
 
   }
   .navbar{
     max-width: 100%;
   }
+
+  /* Experience responsive styles for mobile */
+  .experience .container {
+    padding: 0 0.5rem;
+  }
+
+  .experience-timeline {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .experience-content {
+    padding: 1rem;
+  }
+
+  .experience-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .experience-content h4 {
+    font-size: 1rem;
+  }
+
+  .experience-content .duration {
+    font-size: 0.9rem;
+  }
+
+  .experience-content .description li {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
   .contact{
     /* border: green 5px solid; */
     
@@ -988,13 +1179,45 @@ html, body {
 }
 
 @media screen and (max-width: 425px) {
- .homepage,.skills{
+ .homepage,.skills,.experience{
     max-width: 425px;
 
   }
   .navbar{
     max-width: 100%;
   }
+
+  /* Additional mobile optimizations for experience */
+  .experience h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .experience-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-content {
+    padding: 0.8rem;
+  }
+
+  .experience-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .experience-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .technologies {
+    gap: 0.3rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+  }
+
   .footer{
     grid-template-columns: 1fr 0fr 1fr;
   }
